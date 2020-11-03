@@ -5,7 +5,7 @@
     </li>
 
     <li>
-      Voici ton email : <%= current_user.email %>
+      You are now connected <%= current_user.email %> !
     </li>
 
     <li>
@@ -17,13 +17,29 @@
     </li>
 
   <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
 
   <% end %>
 </ul>
+
+
+
+<div class="container">
+  <div class="text-center">
+  <h2> All events around!</h2><br>
+  </div>
+  <div class="row col">
+    <% @events.each do |event| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><u>Event:</u> <%= event.title%></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Start: <%=event.start_date%></li>
+          <li class="list-group-item">Location: <%=event.location%></li>
+          <li class="list-group-item">Price: <%=event.price %> $</li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

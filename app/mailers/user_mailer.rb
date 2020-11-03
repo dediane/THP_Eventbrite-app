@@ -10,8 +10,7 @@ class UserMailer < ApplicationMailer
   def event_subscription(event_admin, event, user)
     @event_admin = event_admin
     @event = event
-    @user = user
-    @url  = 'http://monsite.fr/login' 
+    @user = user 
     mail(to: @event_admin.email, subject: 'Confirmation event') 
   end
 end
