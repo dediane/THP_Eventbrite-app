@@ -9,18 +9,10 @@ Things you may want to cover:
 
 * System dependencies
 
-* Configuration
+<h1>THP project - Eventbrite</h1>
 
-* Database creation
+<p>  
+Check my project hosted on Heroku:   
+<a href="https://events-diane.herokuapp.com/">https//events-diane.herokuapp.com/</a>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-https://events-diane.herokuapp.com/
+</p>
