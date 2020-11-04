@@ -5,7 +5,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @end_date_time = (@event.start_date + (@event.duration * 60))
   end
 
   def new
@@ -17,16 +16,13 @@ class EventsController < ApplicationController
     @event.event_admin = current_user
 
     if @event.save 
-      redirect_to event_path(@event.id), success: "Evénement créé avec succès !"
+      redirect_to root_path
     else
-      render :new
+      render new_event_path
     end
   end
 
-  private
-
   def event_params
-    params.require(:event).permit(:title, :start_date, :duration, :description, :price, :location)
-    
+    params.require(:event).permit(:title, :start_date, :duration, :location, :description, :price)
   end
 end

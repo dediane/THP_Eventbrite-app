@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :start_date, presence: true, if: :in_the_futur?
+  validates :start_date, presence: true, if: :in_the_futur
   validates :duration, presence: true, numericality: { only_integer: true, greater_than: 0 }, if: :is_multiple_five?
   validates :title, presence: true, length: {in: 5..140}
   validates :description, presence: true, length: {in: 20..1000}
@@ -10,7 +10,7 @@ class Event < ApplicationRecord
   has_many :users, through: :attendances
   belongs_to :event_admin, class_name: "User"
 
-  def in_the_futur?
+  def in_the_futur
     errors.add(:start_date, "You can't create an even in the past.") unless start_date > DateTime.now
   end
 
