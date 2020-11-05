@@ -1,12 +1,14 @@
-<div class="jumbotron text-center">
-  <h2 class="display-4">Eventbrite</h2>
-  <p class="lead">Here you can find all event available around you! If you click the event you will see all detailed informations!</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <%= link_to "Create a new event!", new_event_path, :class => "btn btn-primary btn-lg"%>
-  </p>
+<div class="jumbotron jumbotron-fluid text-center" style="background-image: url(https://i.pinimg.com/564x/fc/c1/76/fcc1766d1ba599fc8e5b1ac28e38ab6b.jpg)">
+  <div class="container">
+    <div class="box mx-auto">
+      <h1 class="display-1"><strong>Eventbrite</strong></h1>
+      <p class="lead">
+        <%= link_to "Create a new event!", new_event_path, :class => "btn btn-outline-dark btn-lg"%>
+      </p><br>
+    </div>
+  </div>
 </div>
+
 
 
 <div class="container">
@@ -17,14 +19,14 @@
     <% @events.each do |event| %>
       <div class="card mx-auto" style="width: 18rem;">
         <div class="card-header text-center">
-          <h5 class="card-title"><b> <%= event.title%></b></h5>
+          <h5 class="card-title"> <b><%= event.title%></b></h5>
         </div>
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Start:</b> <%=event.start_date%></li>
+            <li class="list-group-item"><b>Start:</b><%=event.start_date%></li>
             <li class="list-group-item"><b>Location:</b> <%=event.location%></li>
             <li class="list-group-item"><b>Price:</b> <%=event.price %> $</li>
-            <li class="list-group-item text-center"><%=link_to "More about this event", event_path(event.id), :class => "btn btn-outline-primary"%></li>
+            <li class="list-group-item text-center"><%=link_to "More about this event", event_path(event.id), :class => "btn btn-secondary"%></li>
           </ul>
         </div>
       </div>

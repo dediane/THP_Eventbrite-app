@@ -12,7 +12,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(post_params)
+      flash[:notice] = "Your profil has been updated with success!"
       redirect_to user_path
+    else
+      flash[:alert] = "Your profil falied to update, missing or wrong informations!"
+      render :new
     end
   end
 

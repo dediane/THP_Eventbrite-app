@@ -13,6 +13,26 @@
  *= require_tree .
  *= require_self
  */
+/* body {
+  background-color: #fff2b9 !important;
+} */
+
+.box {
+  background-color: #ffffff;
+  border-color: #000000;
+  color: #000000;
+  border-width: 6px;
+  border-style: solid;
+  border-radius: 16px;
+  max-width: 650px;
+}
+
 .card {
   margin-bottom: 40px;
+  /* background-color: #bce4e9 !important; */
+}
+
+.card li {
+  /* background-color: #bce4e9 !important; */
+
 }

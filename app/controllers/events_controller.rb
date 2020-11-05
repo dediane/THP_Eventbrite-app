@@ -16,8 +16,10 @@ class EventsController < ApplicationController
     @event.event_admin = current_user
 
     if @event.save 
+      flash[:notice] = "Event created with success!"
       redirect_to root_path
     else
+      flash[:alert] = "Failed to create a new evant - missing/wrong informations "
       render :new
     end
   end
