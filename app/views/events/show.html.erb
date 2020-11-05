@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <div class="container mx-auto col-md-9">
+      <div class="text-center"><br>
+      <h2><%=@event.title%></h2><br>
+      </div>
+      <div class="card mx-auto col-md-10" >
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item"><u><b>Description:</u></b><br><br><%= @event.description%></li>
+          <li class="list-group-item"><u><b>Start:</u></b><br><br><%= @event.start_date%></li>
+          <li class="list-group-item"><u><b>Duration:</u></b><br><br><%= @event.duration%> minutes</li>
+          <li class="list-group-item"><u><b>Location:</u></b><br><br><%= @event.location%></li>
+          <li class="list-group-item"><u><b>Price:</u></b><br><br><%= @event.price%> $</li>
+        </div>
+      </div>
+      <div class="text-center">
+      <%=link_to "Attend this event", root_path, :class => "btn btn-success"%>
+      </div><br><br>
+    </div>
+  </body>
+</html>

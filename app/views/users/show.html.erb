@@ -1,14 +1,21 @@
-<div class="container m-auto ">
+<div class="container mx-auto">
   <br><br>
-  <div class="card" style="width: 36rem;">
-  <li class="list-group-item"><b>Last name :</b> <%=@user.first_name%></li>
-  <li class="list-group-item"><b>First name :</b> <%=@user.last_name%></li>
-  <li class="list-group-item"><b>Email :</b> <%=@user.email%></li>
-  <li class="list-group-item"><b>Description :</b> <%=@user.description%></li>
+  <div class="card mx-auto col-md-10">
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item "><b>Last name :</b> <%=@user.first_name%></li>
+        <li class="list-group-item "><b>First name :</b> <%=@user.last_name%></li>
+        <li class="list-group-item "><b>Email :</b> <%=@user.email%></li>
+        <li class="list-group-item "><b>Description :</b> <%=@user.description%></li>
+      </ul>
+    </div>
   </div>
   <br>
-
- <div>
+  <div>
+    <%= link_to "Edit profile", edit_user_path, class:"btn btn-secondary " %>
+  </div><br>
+  <div>
     <%= link_to "Edit email / password", edit_user_registration_path, class:"btn btn-secondary " %>
   </div>
+
 </div>

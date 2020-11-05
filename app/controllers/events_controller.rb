@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     @event.event_admin = current_user
 
     if @event.save 
-      redirect_to event_path(@event.id)
+      redirect_to root_path
     else
       render :new
     end

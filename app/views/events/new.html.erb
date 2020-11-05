@@ -1,42 +1,49 @@
 <html>
   <body>
-    <div class="text-center col-5">
-      <%= form_tag url_for(@event) do %>
+  <div class="container"><br>
+    <h2>Create a new event</h2><br>
+    <%=form_for @event do |f|%>
+
+      <form>
         <div class="form-group">
-          <%= label_tag 'Title', name = 'Title', class: 'font-weight-bold'%>
-          <%= text_field_tag 'title', nil, placeholder: 'Enter a title', class: 'form-control'%>
-          <small id="emailHelp" class="form-text text-muted">5 caracters minimum and 140 caracters maximum.</small>
+          <b><%= f.label :title%></b>
+          <%= f.text_field :title, class: "form-control", placeholder:"enter a title for your event"%>
+          <small class="form-text text-muted">between 5 to 140 caracters</small>
         </div>
-        <br>
-
-         <div class="form-group">
-          <%= label_tag "start_date", name = "Date et heure de début (YYYY-MM-DD HH:MM:SS)", class: 'font-weight-bold'%>
-          <%= datetime_field_tag 'start_date', nil, placeholder: '(YYYY-MM-DD HH:MM:SS)', class: 'form-control'%>
-        </div>
-
         <div class="form-group">
-        <%= label_tag "duration", name = "Duration ", class: 'font-weight-bold'%>
-        <%= text_field_tag 'duration', nil, placeholder: 'in minutes', class: 'form-control'%>
+          <b><%= f.label :description%></b>
+          <%= f.text_area :description, rows:"3", class: "form-control", placeholder:"enter a description"%>
         </div>
 
-        <div class="form-group">
-        <%= label_tag "location", name ="Location", class: 'font-weight-bold'%>
-        <%= text_field_tag 'location', nil, placeholder: 'must be a city', class: 'form-control'%>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <b><%= f.label :location%></b>
+            <%= f.text_field :location, class: "form-control", placeholder:"insert the location of your event"%>
+          </div>
+          <div class="form-group col-md-6">
+            <b><%= f.label :start_date%></b>
+            <%= f.datetime_field :start_date, autocomplete: "YYYY-MM-DD HH:MM:SS", class: "form-control", placeholder:"YYYY-MM-DD HH:MM:SS"%>
+            <small class="form-text text-muted">cannot be in the past</small>
+          </div>
         </div>
 
-        <div class="form-group">
-          <%= label_tag 'description', name = 'Description' , class: 'font-weight-bold'%>
-          <%= text_area_tag 'description', nil, rows: 3, placeholder: 'Describe you event...', class: 'form-control'%>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <b><%= f.label :price%></b>
+            <%= f.text_field :price, class: "form-control", placeholder:"price in dollar"%>
+          </div>
+          <div class="form-group col-md-6">
+            <b><%= f.label :duration%></b>
+            <%= f.datetime_field :duration, class: "form-control", placeholder:"in minutes"%>
+            <small class="form-text text-muted">must be a multiple of 5</small>
+          </div>
+        </div><br>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-outline-primary">Create the event</button>
         </div>
+      </form>
 
-         <div class="form-group">
-        <%= label_tag "price", name ="Price", class: 'font-weight-bold'%>
-        <%= text_field_tag 'price', nil, placeholder: 'price in dollars $$', class: 'form-control'%>
-        </div>
-        <br><br>
-
-        <%= submit_tag "Create an event", class: 'btn btn-primary' %>
-      <% end %>
+    <% end %>
     </div>
   </body>
 </html>
